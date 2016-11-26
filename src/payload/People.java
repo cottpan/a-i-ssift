@@ -14,4 +14,15 @@ public class People {
 		String ret = String.valueOf(id) + "," + String.valueOf(dep);
 		return ret;
 	}
+	public static People[] read(int[][] data){
+		if(data[0].length != 2)
+			throw new IllegalArgumentException();
+		
+		People[] ret = new People[data.length];
+		for(int i = 0; i < data.length; i++){
+			ret[i] = new People(data[i][0], data[i][1]);
+		}
+		
+		return ret;
+	}
 }
